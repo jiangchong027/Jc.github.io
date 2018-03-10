@@ -164,24 +164,61 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             
                 <div class="post-preview">
-    <a href="/Java_Spring_Boot/">
+    <a href="/CentOS7下搭建Dubbo-Zookeeper/">
         <h2 class="post-title">
-            Java Spring Boot
+            CentOS7下搭建Dubbo Zookeeper
         </h2>
         
-            <h3 class="post-subtitle">
-                test
-            </h3>
-        
         <div class="post-content-preview">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu......
+            
+1、安装 JDK：123rpm -i jdk-8u144-linux-x64.rpmjava -version
+
+
+配置环境变量：1234567vi /etc/profile    export JAVA_HOME=/usr/java/jdk1.8.0_144export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar......
         </div>
     </a>
     <p class="post-meta">
         <!-- Date and Author -->
         
             Posted by Jc on
+        
+        2018-03-10
+    </p>
+</div>
+<hr>
+            
+                <div class="post-preview">
+    <a href="/Centos7-install-Redis/">
+        <h2 class="post-title">
+            Centos7 install Redis
+        </h2>
+        
+        <div class="post-content-preview">
+            
+配置编译环境：
+
+1sudo yum install gcc-c++
+
+下载源码：
+
+1wget http://download.redis.io/releases/redis-3.2.8.tar.gz
+
+解压源码：
+
+1tar -zxvf redis-3.2.8.tar.gz
+
+进入到解压目录：
+
+1cd redis-3.2.8
+
+执行make编译Redis：1make
+
+
+注意：mak......
+        </div>
+    </a>
+    <p class="post-meta">
+        <!-- Date and Author -->
         
         2018-03-10
     </p>
