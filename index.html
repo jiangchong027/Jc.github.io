@@ -170,11 +170,8 @@
         </h2>
         
         <div class="post-content-preview">
-            
-1、安装 JDK：123rpm -i jdk-8u144-linux-x64.rpmjava -version
-
-
-配置环境变量：1234567vi /etc/profile    export JAVA_HOME=/usr/java/jdk1.8.0_144export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar......
+            1、安装 JDK：123rpm -i jdk-8u144-linux-x64.rpmjava -version
+配置环境变量：1234567vi /etc/profile    export JAVA_HOME=/usr/java/jdk1.8.0_144export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$J......
         </div>
     </a>
     <p class="post-meta">
@@ -194,27 +191,8 @@
         </h2>
         
         <div class="post-content-preview">
-            
-配置编译环境：
-
-1sudo yum install gcc-c++
-
-下载源码：
-
-1wget http://download.redis.io/releases/redis-3.2.8.tar.gz
-
-解压源码：
-
-1tar -zxvf redis-3.2.8.tar.gz
-
-进入到解压目录：
-
-1cd redis-3.2.8
-
-执行make编译Redis：1make
-
-
-注意：mak......
+            123456789sudo yum install gcc-c++    --配置编译环境wget http://download.redis.io/releases/redis-3.2.8.tar.gz   --下载源码tar -zxvf redis-3.2.8.tar.gz    --解压源码cd redis-3.2.8make    --执行 make 编译 Redis
+注意：make......
         </div>
     </a>
     <p class="post-meta">

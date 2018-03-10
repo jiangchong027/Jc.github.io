@@ -11,9 +11,7 @@
     <!--Description-->
     
         <meta name="description" content="1、安装 JDK：123rpm -i jdk-8u144-linux-x64.rpmjava -version
-
-
-配置环境变量：1234567vi /etc/profile    export JAVA_HOME=/usr/java/jdk1.8.0_144export CLASSPATH=.:$">
+配置环境变量：1234567vi /etc/profile    export JAVA_HOME=/usr/java/jdk1.8.0_144export CLASSPATH=.:$JA">
     
 
     <!--Author-->
@@ -184,7 +182,7 @@
                         
 
 
-<a href="/tags/Linux-Dubbo-Zookeeper/">#Linux Dubbo Zookeeper</a>
+<a href="/tags/Linux/">#Linux</a> <a href="/tags/Dubbo/">#Dubbo</a> <a href="/tags/Zookeeper/">#Zookeeper</a>
 
 
                     
@@ -193,7 +191,7 @@
                     
                         
 
-<a href="/categories/Dubbo/">Dubbo</a>/ <a href="/categories/Dubbo/Zookeeper/">Zookeeper</a>
+<a href="/categories/Dubbo/">Dubbo</a>
 
                     
                 </div>
@@ -204,36 +202,20 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <blockquote>
-<p>1、安装 JDK：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm -i jdk-8u144-linux-x64.rpm</span><br><span class="line"></span><br><span class="line">java -version</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
+                <p>1、安装 JDK：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm -i jdk-8u144-linux-x64.rpm</span><br><span class="line"></span><br><span class="line">java -version</span><br></pre></td></tr></table></figure></p>
 <p>配置环境变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile</span><br><span class="line">    </span><br><span class="line">export JAVA_HOME=/usr/java/jdk1.8.0_144</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br><span class="line"> </span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
 <p>2、安装 Zookeeper：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvf zookeeper-3.4.9.tar.gz</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
 <p>配置环境变量：</p>
-</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile</span><br><span class="line"> </span><br><span class="line">export ZOOKEEPER_HOME=/usr/zookeeper-3.4.9/</span><br><span class="line">export PATH=$ZOOKEEPER_HOME/bin:$PATH</span><br><span class="line">export PATH</span><br><span class="line"> </span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
-<blockquote>
 <p>修改 conf 目录下</p>
-</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cp zoo_sample.cfg zoo.cfg</span><br><span class="line">vi zoo.cfg</span><br><span class="line"> </span><br><span class="line">dataDir=/usr/java/zookeeper-3.4.9/data</span><br><span class="line">dataLogDir=/usr/java/zookeeper-3.4.9/log</span><br></pre></td></tr></table></figure>
-<blockquote>
 <p>zookeeper 目录下新增</p>
-</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir data</span><br><span class="line">mkdir log</span><br></pre></td></tr></table></figure>
-<blockquote>
 <p>3、安装 Tomcat：</p>
-</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvf apache-tomcat-7.0.82.tar.gz</span><br></pre></td></tr></table></figure>
-<blockquote>
 <p>4、安装 Duboo 控制台</p>
-</blockquote>
 <pre><code>GitHub clone duboo 源码
-修改父项目的 pom.xml --GitHub 上 Dubbo 的 issue 中得知 dubbo-admin 只支持 spring 版本为 3.2.16。RELEASE 以下的
+修改父项目的 pom.xml (GitHub 上 Dubbo 的 issue 中得知 dubbo-admin 只支持 spring 版本为 3.2.16.RELEASE 以下的)
 &lt;spring_version&gt;4.3.10.RELEASE&lt;/spring_version&gt;
 改为
 &lt;spring_version&gt;3.2.16.RELEASE&lt;/spring_version&gt;
@@ -246,22 +228,12 @@ mvn install -Dmaven.test.skip=true
 
 把 dubbo-admin-2.5.4.war 拷贝到 Tomcat 的 webapp 目录下
 更改 WEB-INF 目录下 dubbo.properties 的 Zookeeper 地址
-</code></pre><blockquote>
-<p>5、添加自启动脚本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">touch /usr/developer/startup-service.sh</span><br><span class="line"></span><br><span class="line">vi startup-service.sh</span><br><span class="line"></span><br><span class="line">#!/bin/bash</span><br><span class="line">export JDK_HOME=/usr/jdk</span><br><span class="line">export JAVA_HOME=/usr/jdk</span><br><span class="line">/usr/developer/zookeeper3.4.9/bin/zkServer.sh start</span><br></pre></td></tr></table></figure></p>
-</blockquote>
+</code></pre><p>5、添加自启动脚本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">touch /usr/developer/startup-service.sh</span><br><span class="line"></span><br><span class="line">vi startup-service.sh</span><br><span class="line"></span><br><span class="line">#!/bin/bash</span><br><span class="line">export JDK_HOME=/usr/jdk</span><br><span class="line">export JAVA_HOME=/usr/jdk</span><br><span class="line">/usr/developer/zookeeper3.4.9/bin/zkServer.sh start</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/rc.d/rc.local</span><br><span class="line"></span><br><span class="line">echo 添加</span><br><span class="line">/usr/developer/startup-service.sh</span><br><span class="line"> </span><br><span class="line">chmod +x /usr/developer/startup-service.sh</span><br><span class="line">chmod +x /etc/rc.d/rc.local</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>6、关闭 CentOS7 防火墙：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service--停止，重启后不生效</span><br><span class="line">systemctl disable firewalld.service--禁用，重启后生效</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>7、常用命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">firewalld的基本使用</span><br><span class="line">启动： systemctl start firewalld.service</span><br><span class="line">查看状态： systemctl status firewalld</span><br><span class="line">systemctl stop firewalld.service #停止firewall</span><br><span class="line">systemctl disable firewalld.service #禁止firewall开机启动</span><br><span class="line">sh startup.sh --启动Tomcat</span><br><span class="line">sh shutdown.sh --关闭Tomcat</span><br><span class="line">tail -f catalina.out --查看Tomcat日志(logs目录下)</span><br><span class="line">sh zkServer.sh start --启动ZK服务</span><br><span class="line">sh zkServer.sh status --查看ZK服务状态</span><br><span class="line">sh zkServer.sh stop --停止ZK服务</span><br><span class="line">sh zkServer.sh restart --重启ZK服务</span><br><span class="line">ps -ef|grep java --查看java进程</span><br><span class="line">kill -9 -9999 --杀死某个进程</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
+<p>6、关闭 CentOS7 防火墙：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service    --停止，重启后不生效</span><br><span class="line">systemctl disable firewalld.service --禁用，重启后生效</span><br></pre></td></tr></table></figure></p>
+<p>7、常用命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">的基本使用</span><br><span class="line">systemctl start firewalld.service       --启动 firewalld</span><br><span class="line">systemctl status firewalld              --查看 firewalld 状态</span><br><span class="line">systemctl stop firewalld.service        --停止 firewalld</span><br><span class="line">systemctl disable firewalld.service     --禁止 firewalld 开机启动</span><br><span class="line">sh startup.sh                           --启动 Tomcat</span><br><span class="line">sh shutdown.sh                          --关闭 Tomcat</span><br><span class="line">tail -f catalina.out                    --查看 Tomcat 日志(logs目录下)</span><br><span class="line">sh zkServer.sh start                    --启动 Zookeeper 服务</span><br><span class="line">sh zkServer.sh status                   --查看 Zookeeper 服务状态</span><br><span class="line">sh zkServer.sh stop                     --停止 Zookeeper 服务</span><br><span class="line">sh zkServer.sh restart                  --重启 Zookeeper 服务</span><br><span class="line">ps -ef|grep java                        --查看 java 进程</span><br><span class="line">kill -9 -9999                           --杀死某个进程</span><br></pre></td></tr></table></figure></p>
 <p>8、设置静态IP：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33   </span><br><span class="line"></span><br><span class="line">echo 修改为</span><br><span class="line">TYPE=Ethernet</span><br><span class="line">PROXY_METHOD=none</span><br><span class="line">BROWSER_ONLY=no</span><br><span class="line">BOOTPROTO=static</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">IPV6_ADDR_GEN_MODE=stable-privacy</span><br><span class="line">NAME=ens33</span><br><span class="line">IPADDR=192.168.21.128</span><br><span class="line">GATEWAY=192.168.21.2</span><br><span class="line">UUID=30d4a478-c069-44c8-8d5d-fbe49da4b7af</span><br><span class="line">DEVICE=ens33</span><br><span class="line">ONBOOT=yes</span><br><span class="line"></span><br><span class="line">echo 重启网络</span><br><span class="line">service network restart</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
 <p>9、更改 yum 源：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">echo 下载wget</span><br><span class="line">yum install wget -y</span><br><span class="line">echo 备份当前的yum源</span><br><span class="line">mv /etc/yum.repos.d /etc/yum.repos.d.backup4comex</span><br><span class="line">echo 新建空的yum源设置目录</span><br><span class="line">mkdir /etc/yum.repos.d</span><br><span class="line">echo 下载阿里云的yum源配置</span><br><span class="line">wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br><span class="line">yum clean all</span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure></p>
-</blockquote>
 
 
                 
