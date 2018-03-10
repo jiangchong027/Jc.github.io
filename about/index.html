@@ -10,7 +10,7 @@
   
   <title>
     
-      Jc`Blog
+      About | Jc`Blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -137,43 +137,52 @@
   </div>
 </header>
 
-    <div id="article-banner">
-  <h2>Archives</h2>
-  <p class="post-date">文章归档</p>
-</div>
-<main class="app-body" id="archives">
-  
-  
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2018
-  </h1>
-  <div class="section-list">
-    
-    
-      <div class="section-list-item">
-        <a href="/CentOS7下搭建Dubbo-Zookeeper/" class="archive-title">CentOS7下搭建Dubbo Zookeeper</a>
-        <p class="archive-date">03-10</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/Centos7-install-Redis/" class="archive-title">Centos7 install Redis</a>
-        <p class="archive-date">03-10</p>
-      </div>
-    
+    <div id="about-banner" style="background-image: url(http://file.muyutech.com/about.jpg)"></div>
+<div class="author">
+  <div class="head">
+    <img src="https://avatars2.githubusercontent.com/u/26833111?s=400&u=935feb2dd7a586888d02042167d4de23340dddb7&v=4" />
   </div>
-</section>
+  <h3>Jc</h3>
   
-</main>
+    <p class="description">The end is always near.</p>
+  
+  <section class="share-icons">
+    
+    
+    
+      <a class="icon-github" href="https://github.com/jiangchong027" target="_blank">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+    
+    
+      <a class="icon-zhihu" href="https://www.zhihu.com/people/jiang-chong-38-73" target="_blank">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-stack-1x fa-inverse">知</i>
+        </span>
+      </a>
+    
+    
+  </section>
+</div>
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/tags/Zookeeper/index.html';
-    $('#article-banner').geopattern(url);
-    $('.header').removeClass('fixed-header');
+    $('.header').removeClass('fixed-header')
+    var windowH = $(window).height();
+    var author = $('.author')
+    var bodyH = author.offset().top + author[0].offsetHeight + 71;
+    if (bodyH < windowH) {
+      author.css({
+        'margin-bottom': windowH - bodyH
+      })
+    }
   })();
 </script>
+
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
